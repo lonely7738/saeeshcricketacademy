@@ -4,134 +4,169 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saeesh Cricket Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #111;
+      --accent: #facc15;
+      --bg: #fff;
+      --text: #222;
+    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      padding: 80px 20px 40px;
       text-align: center;
-      color: white;
-    }
-    header img {
-      height: 100px;
-      margin-bottom: 15px;
+      background: #fafafa;
     }
     header h1 {
-      font-size: 3.5rem;
-      letter-spacing: 2px;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
     }
     header p {
       font-size: 1.2rem;
-      margin-top: 10px;
+      color: #666;
     }
-    nav {
-      background: #161b22;
-      text-align: center;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
-    nav a {
-      color: #e6edf3;
-      margin: 0 20px;
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+    .two-col {
+      grid-template-columns: 1fr 1fr;
+    }
+    .gallery {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card {
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 10px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: black;
+      padding: 12px 24px;
+      margin-top: 20px;
       text-decoration: none;
       font-weight: bold;
-      text-transform: uppercase;
-      transition: 0.3s ease;
-    }
-    nav a:hover {
-      color: #facc15;
-    }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #161b22;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    section h2 {
-      color: #facc15;
-      margin-bottom: 15px;
-    }
-    ul {
-      list-style: none;
-      padding-left: 15px;
-    }
-    ul li::before {
-      content: '⚡ ';
-      color: #facc15;
+      border-radius: 25px;
     }
     footer {
-      background: #0d1117;
+      background: #111;
+      color: #aaa;
       text-align: center;
-      padding: 20px;
-      color: #8b949e;
+      padding: 30px 10px;
       font-size: 0.9rem;
+      margin-top: 40px;
     }
-    a {
-      color: #58a6ff;
+    @media(max-width: 768px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="saeesh-logo.png" alt="Saeesh Cricket Academy Logo" />
-    <h1>Saeesh Cricket Academy</h1>
-    <p>Founded in 2018 | Vikhroli, Mumbai</p>
-  </header>
+<header>
+  <h1>Saeesh Cricket Academy</h1>
+  <p>Train Like a Champion | Founded in 2018</p>
+</header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#coach">Coach</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<section class="section">
+  <h2>About Us</h2>
+  <div class="grid two-col">
+    <div>
+      <p>We are a performance-focused cricket academy in Mumbai, helping young players grow with discipline, coaching, and real-game experience. Whether it's outdoor training or indoor sessions during the monsoon, we build consistent athletes.</p>
+    </div>
+    <div>
+      <p>Our students have consistently performed in school-level and inter-district tournaments like the <span class="highlight">Giles Shield</span>. We focus on skill-building, fitness, and mindset.</p>
+    </div>
+  </div>
+</section>
 
-  <section id="about">
-    <h2>About the Academy</h2>
-    <p>Saeesh Cricket Academy is a premier cricket coaching center in Vikhroli, Mumbai. Established in 2018, we focus on developing players with a strong foundation, discipline, and passion for the game.</p>
-  </section>
+<section class="section">
+  <h2>Gallery</h2>
+  <div class="grid gallery">
+    <img src="https://via.placeholder.com/300x200?text=Indoor+Practice" alt="Practice">
+    <img src="https://via.placeholder.com/300x200?text=Tournament+Poster" alt="Poster">
+    <img src="https://via.placeholder.com/300x200?text=Match+Highlight" alt="Match">
+    <img src="https://via.placeholder.com/300x200?text=Fitness+Session" alt="Training">
+  </div>
+</section>
 
-  <section id="achievements">
-    <h2>Our Achievements</h2>
-    <ul>
-      <li>Giles Shield Interschool Champions (Year)</li>
-      <li>Multiple district-level tournament wins</li>
-      <li>Indoor fitness and skills training during monsoon</li>
-    </ul>
-  </section>
+<section class="section">
+  <h2>Coach</h2>
+  <div class="card">
+    <p><strong>Jayesh Utekar</strong> – Head Coach</p>
+    <p>With over a decade of experience, Coach Jayesh has trained hundreds of students and guided them toward excellence with a sharp focus on fundamentals, form, and competitive edge.</p>
+  </div>
+</section>
 
-  <section id="coach">
-    <h2>Meet Our Coach – Jayesh Utekar</h2>
-    <p>Coach Jayesh Utekar has years of experience mentoring young talent across Mumbai. His disciplined training methods and strategic match planning have developed numerous champions and winning teams.</p>
-  </section>
+<section class="section">
+  <h2>Join Us</h2>
+  <p>Want to be part of our training program or tournaments?</p>
+  <a class="button" href="https://wa.me/918169627097" target="_blank">Chat on WhatsApp</a>
+</section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Phone:</strong> <a href="tel:+918169627097">8169627097</a></p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/saeesh_cricket_academy" target="_blank">@saeesh_cricket_academy</a></p>
-    <p><strong>Location:</strong> Badlapur West / Vikhroli, Mumbai</p>
-  </section>
+<section class="section">
+  <h2>FAQs</h2>
+  <div class="grid two-col">
+    <div class="card">
+      <p><strong>Where is the academy located?</strong></p>
+      <p>Vikhroli & Badlapur West, Mumbai</p>
+    </div>
+    <div class="card">
+      <p><strong>Do you train beginners?</strong></p>
+      <p>Yes! From beginner to advanced players — all are welcome.</p>
+    </div>
+    <div class="card">
+      <p><strong>Indoor coaching during monsoon?</strong></p>
+      <p>Yes, full indoor coaching available during rainy season.</p>
+    </div>
+    <div class="card">
+      <p><strong>Contact for events/turf booking?</strong></p>
+      <p>Yes, contact us on WhatsApp for event tie-ups or facility use.</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Saeesh Cricket Academy | All Rights Reserved
-  </footer>
+<footer>
+  &copy; 2025 Saeesh Cricket Academy. All rights reserved. | Instagram: <a href="https://www.instagram.com/saeesh_cricket_academy" target="_blank">@saeesh_cricket_academy</a>
+</footer>
 
 </body>
 </html>
