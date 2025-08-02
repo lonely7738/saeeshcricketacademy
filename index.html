@@ -92,6 +92,24 @@
       font-size: 0.9rem;
       margin-top: 40px;
     }
+    a {
+      color: #0077cc;
+    }
+
+    /* Scroll animation styles */
+    .fade-left, .fade-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 1s ease;
+    }
+    .fade-left {
+      transform: translateX(-50px);
+    }
+    .fade-in {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
     @media(max-width: 768px) {
       .two-col {
         grid-template-columns: 1fr;
@@ -114,6 +132,20 @@
     </div>
     <div>
       <p>Our students have consistently performed in school-level and inter-district tournaments like the <span class="highlight">Giles Shield</span>. We focus on skill-building, fitness, and mindset.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISION SECTION with animation -->
+<section class="section" style="overflow: hidden;">
+  <h2>Our Vision</h2>
+  <div class="grid two-col" style="align-items: center;">
+    <div class="fade-left">
+      <p>At Saeesh Cricket Academy, we aim to empower young athletes with the skills, mindset, and training they need to grow — both on and off the pitch.</p>
+      <p>Our vision is to develop not just players, but leaders through discipline, technique, and passion for the game.</p>
+    </div>
+    <div class="fade-right">
+      <img src="https://via.placeholder.com/400x280?text=Cricket+Training" alt="Team Training" style="width:100%; border-radius: 12px;" />
     </div>
   </div>
 </section>
@@ -164,26 +196,34 @@
   </div>
 </section>
 
-
-<section class="section">
-  <h2>Why Choose Us</h2>
-  <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
-    <div class="card">
-      <h3>Experienced Coaching</h3>
-      <p>Over 10 years of experience in building players and teams.</p>
-    </div>
-    <div class="card">
-      <h3>All-Season Training</h3>
-      <p>Indoor + outdoor practice, even during monsoon season.</p>
-    </div>
-    <div class="card">
-      <h3>Focus on Fitness</h3>
-      <p>We build both skill and strength with full conditioning sessions.</p>
-    </div>
 <footer>
-  </div
-</section>
-</body>
-</html>
   &copy; 2025 Saeesh Cricket Academy. All rights reserved. | Instagram: <a href="https://www.instagram.com/saeesh_cricket_academy" target="_blank">@saeesh_cricket_academy</a>
 </footer>
+
+<!-- Scroll animation script -->
+<script>
+  const lefts = document.querySelectorAll('.fade-left');
+  const rights = document.querySelectorAll('.fade-right');
+
+  function animateOnScroll(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  const options = {
+    threshold: 0.3
+  };
+
+  const observer = new IntersectionObserver(animateOnScroll, options);
+
+  [...lefts, ...rights].forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
