@@ -5,94 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saeesh Cricket Academy</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
     }
     header {
-      background: #0077b6;
-      color: white;
-      padding: 20px;
+      background: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      color: white;
+    }
+    header img {
+      height: 100px;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
     nav {
-      background: #023e8a;
-      padding: 10px;
+      background: #161b22;
       text-align: center;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #e6edf3;
+      margin: 0 20px;
       text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: 0.3s ease;
     }
-    .container {
+    nav a:hover {
+      color: #facc15;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
       padding: 20px;
+      background: #161b22;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
-    .section {
-      margin-bottom: 40px;
+    section h2 {
+      color: #facc15;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 15px;
+    }
+    ul li::before {
+      content: '⚡ ';
+      color: #facc15;
     }
     footer {
-      background: #0077b6;
-      color: white;
+      background: #0d1117;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
+      color: #8b949e;
+      font-size: 0.9rem;
     }
-    img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-    .whatsapp {
-      display: inline-block;
-      margin-top: 20px;
-      background: #25D366;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
+    a {
+      color: #58a6ff;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Saeesh Cricket Academy</h1>
-  <p>Where Champions Are Made</p>
-</header>
+  <header>
+    <img src="saeesh-logo.png" alt="Saeesh Cricket Academy Logo" />
+    <h1>Saeesh Cricket Academy</h1>
+    <p>Founded in 2018 | Vikhroli, Mumbai</p>
+  </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#coach">Coach</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<div class="container">
+  <section id="about">
+    <h2>About the Academy</h2>
+    <p>Saeesh Cricket Academy is a premier cricket coaching center in Vikhroli, Mumbai. Established in 2018, we focus on developing players with a strong foundation, discipline, and passion for the game.</p>
+  </section>
 
-  <div id="about" class="section">
-    <h2>About Us</h2>
-    <p>Saeesh Cricket Academy is dedicated to nurturing young cricket talent through structured coaching, fitness sessions, and competitive matches. Our students have gone on to win multiple interschool tournaments like the prestigious Giles Shield Championship.</p>
-  </div>
+  <section id="achievements">
+    <h2>Our Achievements</h2>
+    <ul>
+      <li>Giles Shield Interschool Champions (Year)</li>
+      <li>Multiple district-level tournament wins</li>
+      <li>Indoor fitness and skills training during monsoon</li>
+    </ul>
+  </section>
 
-  <div id="gallery" class="section">
-    <h2>Gallery</h2>
-    <img src="https://via.placeholder.com/600x300?text=Indoor+Practice" alt="Indoor Practice"/>
-    <img src="https://via.placeholder.com/600x300?text=Tournament+Victory" alt="Tournament Victory"/>
-  </div>
+  <section id="coach">
+    <h2>Meet Our Coach – Jayesh Utekar</h2>
+    <p>Coach Jayesh Utekar has years of experience mentoring young talent across Mumbai. His disciplined training methods and strategic match planning have developed numerous champions and winning teams.</p>
+  </section>
 
-  <div id="contact" class="section">
+  <section id="contact">
     <h2>Contact Us</h2>
-    <p>📍 Location: Badlapur West, Maharashtra</p>
-    <p>📞 Phone: +918169627097</p>
-    <a class="whatsapp" href="https://wa.me/918169627097" target="_blank">Chat on WhatsApp</a>
-  </div>
+    <p><strong>Phone:</strong> <a href="tel:+918169627097">8169627097</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/saeesh_cricket_academy" target="_blank">@saeesh_cricket_academy</a></p>
+    <p><strong>Location:</strong> Badlapur West / Vikhroli, Mumbai</p>
+  </section>
 
-</div>
-
-<footer>
-  &copy; 2025 Saeesh Cricket Academy. All rights reserved.
-</footer>
+  <footer>
+    &copy; 2025 Saeesh Cricket Academy | All Rights Reserved
+  </footer>
 
 </body>
 </html>
